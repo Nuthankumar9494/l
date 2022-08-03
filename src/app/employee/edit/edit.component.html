@@ -1,0 +1,39 @@
+<!-- <div class="border">
+<form class="form" #box="ngForm">
+<h1>Add Employee:</h1>
+<label>Name:</label>
+<input type="text"   placeholder="enter your name" name="name" ngModel>
+<label>DOB:</label>
+<input type="date"  placeholder="enter your name" name="date" ngModel>
+<label>PhoneNumber:</label>
+<input type="number"  placeholder="enter your name" name="number" ngModel>
+</form>
+<button  (click)='getdata(box.value)' routerLink="/employee" (click)="cancel()">Submit</button><button routerLink="/employee" (click)="cancel()">Cancel</button>
+</div> -->
+<div class="border">
+    <form class="form" [formGroup]="editLoginForm">
+        <h1>Edit Employee:</h1>
+        <!-- <label>ID:</label>
+    <input type="number"   placeholder="" name="name" formControlName="ID" > -->
+        <label>Name:</label>
+        <input type="text" placeholder="enter your name" name="name" formControlName="name">
+        <div *ngIf="f.name.touched && f.name.invalid">
+            <div class="text-error" *ngIf="f.name.errors.required">Name is required</div>
+        </div>
+        <label>DOB:</label>
+        <input type="text" placeholder="enter your date of birth" name="dateofbirth" formControlName="dateofBirth">
+        <div *ngIf="f.dateofBirth.touched && f.dateofBirth.invalid">
+            <div class="text-error" *ngIf="f.dateofBirth.errors.required">Date of birth is required</div>
+        </div>
+        <label>PhoneNumber:</label>
+        <input type="tel" placeholder="enter your PhoneNumber" name="PhoneNumber" formControlName="phoneNumber">
+        <div *ngIf="f.phoneNumber.touched && f.phoneNumber.invalid">
+            <div class="text-error" *ngIf="f.phoneNumber.errors.required">Phone Number is required</div>
+            
+        </div>
+
+        <button (click)="getdata()">Submit</button><button routerLink="/employee" (click)="cancel()">Cancel</button>
+
+    </form>
+
+</div>

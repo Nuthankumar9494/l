@@ -1,0 +1,27 @@
+<div>
+    <h1>Employee Details:</h1>
+    <button routerLink="/employee/addemployee" (click)="addata()">Add Employee</button>
+</div>
+<table class="content-table">
+    <thead>
+        <tr>
+            <th>#ID</th>
+            <th>Name</th>
+            <th>DOB</th>
+            <th>Phone</th>
+            <th>Action</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let items of data">
+            <td>{{items.id}}</td>
+            <td>{{items.name}}</td>
+            <td>{{items.dateofBirth}}</td>
+            <td>{{items.phoneNumber}}</td>
+
+            <td><button (click)="edit(items)" class="bt1">Edit</button><button
+                    (click)="deleteuser(items)" class="bt2">Delete</button></td>
+        </tr>
+    </tbody>
+</table>
